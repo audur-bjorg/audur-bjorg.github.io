@@ -84,9 +84,8 @@ var $post = $('.post'),
 
                 if(w >= g && w<=h) {
                     $('.fixed-nav').fadeOut('fast')
-                } else {
-                    if($(window).width()>500)
-                      $('.fixed-nav').fadeIn('fast')
+                } else if(w > 0 && $(window).width()>500) {
+                    $('.fixed-nav').fadeIn('fast')
                 }
 
                 $post.each(function () {
