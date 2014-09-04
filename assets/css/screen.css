@@ -127,7 +127,7 @@ h4, h5, h6 {
 }
 h3, h4, h5, h6 {
     text-rendering: optimizeLegibility;
-    line-height: 120%;
+    line-height: 150%;
     margin-top: 0;
     font-family: 'Open Sans', sans-serif;
     margin-bottom: 0%;
@@ -407,7 +407,9 @@ li {
     padding-top: 7px;
 }
 
-
+p:empty {
+    margin: 0;
+}
 
 /* ==========================================================================
    3. Utilities - These things get used a lot
@@ -504,7 +506,7 @@ li {
 .post {
     position: relative;
     width: 80%;
-    max-width: 700px;
+    max-width: 800px;
     margin: 0rem auto;
     padding-bottom: 4rem;
     padding-top: 4rem;
@@ -692,6 +694,22 @@ a.fn-item.active {
     margin: 0 auto;
 }
 
+.post-content  {
+    overflow: hidden;
+}
+
+.post.tag-columns-2 {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+}
+
+.column-break {
+    -webkit-column-break-after: always;
+    -moz-column-break-after: always;
+    column-break-after: always;
+}
+
 /* The author credit area after the post */
 .post-footer {
     position: relative;
@@ -810,6 +828,17 @@ a.fn-item.active {
     border:1px solid #555; 
     box-shadow: 0 0 3px #aaa; 
     padding-right:70px;
+}
+
+.portrait {
+    float: left;
+    margin-top: 1em;
+    margin-right: 1em;
+    width: 30%;
+}
+
+.portrait img {
+    width: 100%;
 }
 
 /* ==========================================================================
@@ -1181,9 +1210,15 @@ a.fn-item.active {
         /*margin-top: 0.8rem;*/
         font-size: 1.1rem;
     }
-
 }
 
+@media only screen and (max-width: 800px) {
+    .post.tag-columns-2 {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+}
 /* ==========================================================================
    End of file. Media queries should be the last thing here. Do not add stuff
    below this point, or it will probably fuck everything up.
