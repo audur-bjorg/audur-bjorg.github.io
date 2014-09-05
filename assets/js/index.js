@@ -4,7 +4,6 @@
 var $post = $('.post'), 
 	$first = $('.post.first'), 
 	$last = $('.post.last'),
-    $booking = $('.post.tag-booking'),
     $treatment = $('.post.tag-treatment'),
     $map = $('.post.tag-map'), 
 	$fnav = $('.fixed-nav'),
@@ -45,9 +44,6 @@ var $post = $('.post'),
         })
         $('.btn.last').click( function () {
         	srcTo ($last)
-        })
-        $('.btn.booking').click( function () {
-            srcTo ($booking)
         })
         $('.btn.map').click( function () {
             srcTo ($map)
