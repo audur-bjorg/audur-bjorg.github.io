@@ -483,6 +483,14 @@ p:empty {
     font-size: 5rem;
     letter-spacing: -1px;
     color: #768534;
+    background-image: url(../../content/images/logga.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 150px;
+}
+
+.blog-title span {
+    display: none;
 }
 
 .blog-description {
@@ -839,6 +847,13 @@ a.fn-item.active {
 
 .portrait img {
     width: 100%;
+}
+
+.signature {
+    text-align: right;
+    float: right;
+    font-style: italic;
+    margin-right: 10%;
 }
 
 /* ==========================================================================
