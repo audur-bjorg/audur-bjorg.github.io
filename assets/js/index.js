@@ -5,6 +5,7 @@ var $post = $('.post'),
 	$first = $('.post.first'), 
 	$last = $('.post.last'),
     $treatment = $('.post.tag-treatment'),
+    $contact = $('.post.tag-contact'),
     $map = $('.post.tag-map'), 
 	$fnav = $('.fixed-nav'),
 	$postholder = $('.post-holder'),
@@ -50,6 +51,9 @@ var $post = $('.post'),
         })
         $('.btn.treatment').click( function () {
             srcTo ($treatment)
+        })
+        $('.btn.contact').click( function () {
+            srcTo ($contact)
         })
         $('#header-arrow').click(function () {
             srcTo ($first)
