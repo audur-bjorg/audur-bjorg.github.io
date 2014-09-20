@@ -674,6 +674,25 @@ a.fn-item.active {
     line-height: 1.5em;
 }
 
+.btn .spinner {
+    height: 16px;
+    display: none;
+    margin-left: 4px;
+}
+
+.btn.sending:hover {
+    background-color: #95A063;
+    cursor: default;
+}
+
+.btn.sending .spinner {
+    display: initial;
+}
+
+.feedback {
+    font-style: italic;
+}
+
 /* ==========================================================================
    5. Single Post - When you click on an individual post
    ========================================================================== */

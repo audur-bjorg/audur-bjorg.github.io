@@ -22,6 +22,8 @@
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <script src="http://www.parsecdn.com/js/parse-1.2.16.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/screen.css" />
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
@@ -174,12 +176,14 @@
 
             </header>
             <section class="post-content">
-                <p><form class="contact_form">  
-    <input name="name" placeholder="Ditt namn" class="full-width" />
-    <input name="mail" type="email" placeholder="Din mailadress" />
-    <input name="phone" placeholder="Ditt telefonnummer" class="right" />
-    <textarea name="message" placeholder="Ditt meddelande"></textarea>
-    <a class="btn submit" href="index.html#">Skicka</a>
+                <p><form class="contact_form" ng-app="bjorg" ng-controller="mailer" no-validate>  
+    <input name="name" placeholder="Ditt namn" class="full-width" ng-model="name" />
+    <input name="mail" type="email" placeholder="Din mailadress" ng-model="email" />
+    <input name="phone" placeholder="Ditt telefonnummer" class="right" ng-model="phone"/>
+    <textarea name="message" placeholder="Ditt meddelande" ng-model="message"></textarea>
+    <p ng-show="success" class="feedback" ng-cloak>Meddelandet är skickat</p>
+    <p ng-show="error" class="feedback" ng-cloak>Något gick fel, kunde inte skicka iväg meddelandet</p>
+    <a class="btn submit" ng-click="send()" ng-class="{sending: sending}">Skicka<img src="content/images/spinner3.gif" class="spinner" /></a>
 </form></p>
             </section>
         </article>
@@ -200,10 +204,11 @@
         </div>
     </footer>
 
-    <script src="public/jquery.js?v=af1d537314"></script>
+    <script src="public/jquery.js?v=1bd57431e0"></script>
 
     <script type="text/javascript" src="assets/js/icons.js"></script>
     <script type="text/javascript" src="assets/js/index.js"></script>
+    <script type="text/javascript" src="assets/js/mailer.js"></script>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
