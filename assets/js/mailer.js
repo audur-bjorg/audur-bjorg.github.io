@@ -5,7 +5,9 @@ bjorg.controller('mailer', ['$scope', function($scope) {
 
     $scope.send = function() {
       $scope.sending = true;
-      
+      $scope.success = false;
+      $scope.error = false;
+
       var data = {
         name: $scope.name,
         email: $scope.email,
@@ -18,6 +20,7 @@ bjorg.controller('mailer', ['$scope', function($scope) {
           $scope.$apply(function() {
             $scope.success = true;
             $scope.sending = false;
+            $scope.error = false;
           });
         },
    
@@ -25,6 +28,7 @@ bjorg.controller('mailer', ['$scope', function($scope) {
           $scope.$apply(function() {
             $scope.error = true;
             $scope.sending = false;
+            $scope.success = false;
           });
         }
       });
